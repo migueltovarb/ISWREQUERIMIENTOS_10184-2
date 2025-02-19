@@ -39,7 +39,7 @@ class Tarea:
             if tarea["completada"]: 
                 print('La tarea ya estaba marcada como completada.')  
             else:
-                tarea["completada"] = ('compleatada') + tarea["completada"]
+                tarea["completada"] =True 
             print(f' La tarea "{tarea["nombre"]}" ha sido marcada como completada.')
         else: 
             print(' Opción inválida, su tarea no existe.')
