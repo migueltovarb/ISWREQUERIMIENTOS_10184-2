@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" >crossorigin="anonymous"</script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="form-container">
+            <form method="POST" class="sign-in">
+
+                {% csrf_token %}
+
+                <h2>Iniciar Sesión</h2>
+
+                {{ login_form.non_field_errors }}
+
+                <div class="social-networks">
+                    <ion-icon name="logo-twitch"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                </div>
+
+                <span>Use su nombre de usuario y contraseña.</span>
+
+                <div class="container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    {{ login_form.username }}
+                    {{ login_form.username.errors }}
+                </div>
+
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    {{ login_form.password }}
+                    {{ login_form.password.errors }}
+                </div>
+
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <button class="button" name="login">Iniciar sesión</button>
+
+            </form>
+
+        </div>
+
+        <div class="form-container">
+            <form method="POST" class="sign-up">
+                {% csrf_token %}
+
+                <h2>Regístrate</h2>
+
+                {{ register_form.non_field_errors }}
+
+                <div class="social-networks">
+                    <ion-icon name="logo-twitch"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-tiktok"></ion-icon>
+                </div>
+
+                <span>Para registrarse use un nombre de usuario y contraseña.</span>
+
+                <div class="container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    {{ register_form.username }}
+                    {{ register_form.username.errors }}
+                </div>
+
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    {{ register_form.password }}
+                    {{ register_form.password.errors }}
+                </div>
+
+                <div class="container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    {{ register_form.password2 }}
+                    {{ register_form.password2.errors }}
+                </div>
+
+                <button class="button" name="register">Registrarse</button>
+            </form>
+        </div>
+
+        <div class="container-welcome">
+            <div class="welcome-sign-up welcome">
+                <h3>¡Bienvenido!</h3>
+                <p>Ingrese sus datos personales para usar todas las funciones del sitio. ¿No tienes una cuenta? ¡Regístrate!</p>
+                <button class="button" id="btn-sign-up">Registrarse</button>
+            </div>
+
+            <div class="welcome-sign-in welcome">
+                <h3>¡Hola!</h3>
+                <p>Regístrese con sus datos personales para usar todas las funciones del sitio. ¿Ya estás registrado? ¡Ingresa con tu cuenta!</p>
+                <button class="button" id="btn-sign-in">Iniciar Sesión</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script  type = "module"  src = " https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js " > </script> 
+    <script  nomodule  src = " https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js " > </script>
+</body>
+</html>

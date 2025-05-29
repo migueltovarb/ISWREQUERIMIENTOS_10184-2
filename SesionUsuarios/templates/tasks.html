@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/tasks.css' %}">
+
+<h2 class="titulo">¡Bienvenid@!, {{user.username}}</h2>
+
+<div class="container-opciones">
+
+    <a href="{% url 'registrar_reclamo' %}" class="btn btn-primary">Registrar Reclamos</a>
+
+    <a href="{% url 'ver_estado_reclamo' %}" class="btn btn-primary" >Ver estado del reclamo</a>
+
+    <a href="{% url 'registrar_solicitud' %}" class="btn btn-primary">Registrar Solicitud</a>
+
+    {% if ticket %}
+    <div class="ticket-container" style="margin-top: 20px;">
+        <p>
+            Número de Ticket: 
+            <strong id="ticket-text">{{ ticket }}</strong>
+            <ion-icon name="copy-outline" class="copy-icon" style="cursor:pointer; vertical-align: middle;" onclick="copiarTicket()"></ion-icon>
+        </p>
+        <div id="mensaje-copiado" class="mensaje-copiado">Ticket copiado en portapapeles</div>
+    </div>
+    {% endif %}
+
+    
+
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <script src="{% static 'js/copiar_ticket.js' %}"></script>
+
+    {% endblock %}
+</div>
