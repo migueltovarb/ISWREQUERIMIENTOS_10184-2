@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/estado.css' %}?">
+
+    <div class="container">
+        <div class="form-container">
+            {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <h2>Ver Estado del Reclamo</h2>
+
+        <form method="POST">
+        {% csrf_token %}
+        <label for="ticket">Número de Ticket:</label>
+        <input type="text" name="ticket" id="ticket" required>
+        <button type="submit">Ver Estado</button>
+        </form>
+
+        {% if reclamo %}
+        <div class="estado-reclamo">
+            <h3>Estado del Reclamo</h3>
+            <p>Ticket: {{ reclamo.ticket }}</p>
+            <p>Estado: {{ reclamo.get_estado_display }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

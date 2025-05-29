@@ -1,0 +1,58 @@
+
+.container-opciones {
+    background-color: #f3f9f8;
+    width: 600px;
+    padding: 40px;
+    margin: 100px auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 70px;
+}
+
+.container-opciones .btn {
+    display: block;
+    width: 90%;
+    margin: 16px auto;
+    padding: 16px 0;
+    font-size: 20px;
+    background-color: #3ab397;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+
+.container-opciones .btn:hover {
+    background-color: #2d9c89;
+}
+
+.alert.alert-success {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.mensaje-copiado {
+    background-color: #3ab397;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s;
+    font-weight: bold;
+}

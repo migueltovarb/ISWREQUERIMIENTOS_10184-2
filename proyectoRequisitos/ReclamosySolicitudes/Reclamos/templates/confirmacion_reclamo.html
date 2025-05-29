@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2>¡Reclamo registrado con exito!</h2>
+<p>Gracias por enviarnos tu reclamo</p>
+<p><strong>El número de ticket para tu reclamo es: </strong>{{ticket}}</p>
+
+<p>Guarda este número para consultar el estado de tu reclamo.</p>
+<a href="{% url 'ver_estado_reclamo'%}" class="btn btn-primary">consultar el estado del reclamo.</a>
+
+{% endblock %}
